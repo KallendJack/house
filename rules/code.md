@@ -31,7 +31,7 @@ configs enforce what a check can (`tsconfig.house.json`, `biome.house.json`, the
 
   ```text
   src/
-  ├── features/<feature>/   one folder per feature: its pages or routes, logic, its own components; index.ts is its door
+  ├── features/<feature>/   one folder per feature: its pages or routes, logic, its own components; index.ts is its interface
   ├── components/<kind>/    UI shared by two or more features, grouped by kind: buttons/, forms/, layout/, feedback/
   ├── lib/<topic>/          shared helpers, grouped by topic once there's more than a few
   └── main.ts               the entry: wires the features together
@@ -39,14 +39,14 @@ configs enforce what a check can (`tsconfig.house.json`, `biome.house.json`, the
   ```
 
 - **No flat piles.** A folder holds one kind of thing. Past 15 source files it splits into subfolders by kind or
-  topic, never into "misc" or "utils2"; the size check fails a folder that doesn't.
+  topic, each named for what it holds; the size check fails a folder past the limit.
 - **Names:** files in kebab-case, named after what they export; one component per file.
 - **Vertical slices.** Each feature is one folder: its routes or pages, its logic, its browser code. A feature has
   one name everywhere: folder, routes, tests, glossary. Folders a framework fixes (`pages/`, `routes/`) stay thin
   and call into the feature's folder; otherwise follow the framework's own conventions.
-- **One door per feature.** A feature's `index.ts` exports what others may use, kept small; other features import
-  from it, never from its insides. A deep feature with a small door is easier to change and to hand to an agent.
-- **A feature README only when it earns it:** when what the folder does or how it's used isn't plain from its door.
+- **Each feature is a deep module:** its `index.ts` is its interface, small, and other features import only from it.
+  A deep module is easier to change and to hand to an agent (`codebase-design` has the vocabulary).
+- **A feature README only when it earns it:** when what the folder does or how it's used isn't plain from its interface.
   The repo's `README.md` lists the features in a line each.
 - **Shared code** sits in one place for UI pieces and one for helpers (`components/`, `lib/`); look there before
   writing one. Share knowledge, not look-alikes: code that must change together becomes one; code that merely looks
@@ -71,8 +71,7 @@ configs enforce what a check can (`tsconfig.house.json`, `biome.house.json`, the
   schema.
 - **Make wrong states unrepresentable.** Each variant is its own case the compiler checks; expected failures are
   values the caller has to handle, and exceptions are for bugs.
-- **In TypeScript:** `tsconfig.house.json`'s flags; `as const` and `satisfies` are the only casts, and Biome rejects
-  `any` and `!`; Zod at the edges; discriminated unions, no enums; `type` over `interface`; `Result` at module
+- **In TypeScript:** `as const` and `satisfies` are the only casts; Zod at the edges; discriminated unions, no enums; `type` over `interface`; `Result` at module
   boundaries; an options object past two parameters.
 
 ## Errors and security

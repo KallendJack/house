@@ -12,11 +12,12 @@ Read before building or changing anything a person sees.
   whole board or says which parts it leaves out and where they're covered. A change with nothing new to see names the
   board that already covers it.
 - **The pull request puts screenshots beside each board it builds**, at every size the board is drawn for, and lists
-  every difference. An unlisted difference doesn't merge; a listed one needs the owner's OK. "Close enough, with a
-  follow-up" is not a merge. A review checks the screenshots against the board, not only the code against the issue.
+  every difference. It merges when it matches the board, or when the owner has OK'd each listed difference; a
+  follow-up issue doesn't stand in for either. A review checks the screenshots against the board as well as the
+  code against the issue.
 - **On merge,** a board built as drawn moves from Agreed to Archive, and the new screenshot goes on Live. Otherwise
   the board stays in Agreed and the gap is written on its issue.
-- **Labels say what's happening,** never what isn't: "in the green", not "no tape".
+- **Labels say what's happening:** "in the green", "drill first".
 
 ## Look
 
@@ -31,13 +32,13 @@ Read before building or changing anything a person sees.
 ## Behaviour
 
 - A screen shows what the user needs now and what they must act on (errors, flagged items); the rest is one tap
-  away. Calm: no nags, no warnings nobody asked for.
+  away. Calm: only what's needed, said once.
 - Zero layout shift: what loads later holds its final size from the first frame.
 - Content that loads after the page fills skeleton rows, and a revisit shows the last answer at once. A button
   shows when it's busy.
 - Forms keep what was typed on an error and show the error beside its field.
 - **Errors and warnings say what to do,** in plain words: what happened and the next step ("Couldn't save, you're
-  offline. It'll retry when you're back."), never a code or a bare "Something went wrong".
+  offline. It'll retry when you're back.").
 - **Empty screens point the way:** what goes here and the one action that fills it.
 
 ## Access

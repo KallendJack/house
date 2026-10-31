@@ -1,6 +1,6 @@
 ---
 name: house-setup
-description: Set a repo up with the house standard, or bring its copy up to date. Use when starting a new repo, when a repo's house rules or configs may be older than the house repo's, or when the user says "set up house" or "house check".
+description: House standard for a repo: write it into a new repo, or bring an existing repo's copy up to date. Use when the user says "set up house" or "house check", or when starting a new repo.
 ---
 
 # House setup
@@ -35,15 +35,15 @@ This skill writes them into a repo, or offers the changes when the repo's copy d
      `packageManager` and `engines` pinned, and `configs/github/ci.yml` and `configs/github/dependabot.yml` copied
      to `.github/workflows/ci.yml` and `.github/dependabot.yml`, adjusted to the commands the repo has;
    - a `LICENSE` if the repo is public (ask the user which).
-7. **Settings on GitHub,** after the pull request merges (ask before changing any): protect the default branch so
+7. **Open a pull request** with the `pr` skill and tell the user in a sentence or two what changed and why. Done
+   when the pull request is open and its CI is green.
+8. **Settings on GitHub,** after the pull request merges (ask before changing any): protect the default branch so
    it takes only green pull requests, and turn on secret scanning with push protection
    (`gh api -X PATCH repos/<owner>/<repo> -f security_and_analysis[secret_scanning][status]=enabled` and the same for
    `secret_scanning_push_protection`).
-8. **Show the diff** to the user in a sentence or two (what changed, why) and open a pull request with the `pr`
-   skill. Never push to the default branch.
 
 ## Rules
 
-- Change nothing the house doesn't own. A repo's own rules are the owner's.
-- A house rule that's wrong for one repo is fixed in the repo's own section, not by editing the copied block.
+- Change only what the house owns. A repo's own rules are the owner's.
+- A house rule that's wrong for one repo is overridden in the repo's own section; the copied block stays as house wrote it.
 - A rule worth having everywhere goes in the house repo first, in its own pull request, then out to the repos.

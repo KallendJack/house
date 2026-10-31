@@ -23,7 +23,7 @@ From the house repo (`KallendJack/house`, `rules/base.md`); change them there, n
 - **Secrets** come from the environment, each listed in `.env.example`. Examples and fixtures are made up; the
   owner's and real people's data stays out of the repo.
 - **Dependencies** stay few and locked, the platform's own pieces first. Vendored files say where they came from.
-- **Dead code** and config are deleted, not commented out or left behind.
+- **Dead code** and config are deleted.
 - **Talking to the owner:** plain words and short; name things, not issue numbers; show work as screenshots with a
   one-line review and a short list of decisions, each with a recommendation. Technical calls are yours, made and
   noted; what they want, what it looks like and what to cut are theirs.
