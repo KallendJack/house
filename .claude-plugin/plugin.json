@@ -1,6 +1,6 @@
 {
   "name": "house",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "The house standard: rules and skills for every repo, on top of Matt Pocock's skills.",
   "author": { "name": "KallendJack", "url": "https://github.com/KallendJack" },
   "repository": "https://github.com/KallendJack/house",

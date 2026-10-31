@@ -7,8 +7,7 @@ From the house repo (`KallendJack/house`, `rules/base.md`); change them there, n
   `code-review`, `pr`); when unsure which fits, `ask-matt` says. Where his skills have a rule, it wins; the house
   rules only fill the gaps.
 - **Work** starts from an item where `docs/agents/issue-tracker.md` says work lives. Before building one, check its
-  comments and open PRs for a claim, then comment "Building this". One thing at a time in an area: the next starts
-  once the owner has tried the last.
+  comments and open PRs for a claim, then comment "Building this".
 - **Words** live in `GLOSSARY.md`; decisions that are hard to reverse or surprising are short ADRs in `docs/adr/`.
 - **Branches** start from the default branch and rebase on it. A pull request that needs another waits for it to
   merge rather than carrying its branch.
@@ -16,8 +15,8 @@ From the house repo (`KallendJack/house`, `rules/base.md`); change them there, n
   browser suite runs in CI. After pushing, watch CI and fix what fails before calling the work ready.
 - **Merging** waits for green checks and a review against the issue. A pull request the owner will see says how to
   try it.
-- **Prompts:** a change to what a model is told runs the project's evals 3 times on Claude and 3 on Codex; each
-  case passes at least 2 of 3 on each before it merges.
+- **Prompts:** in a project with model evals, a change to what a model is told runs them 3 times on Claude and 3
+  on Codex; each case passes at least 2 of 3 on each before it merges.
 - **Docs** move with the change, in the same pull request, each kind in one place: `README.md` (what the repo is,
   how to run, check and deploy it, its features in a line each), `AGENTS.md` (how agents work here; `CLAUDE.md`
   only points to it), `GLOSSARY.md`, `docs/adr/` (decisions), `docs/agents/` (agent extras), `.env.example`.

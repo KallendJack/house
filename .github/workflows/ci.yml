@@ -1,0 +1,16 @@
+# Checks the house repo itself: the size check's tests, and that the plugin manifests and matt.json parse.
+name: CI
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node --test configs/check-size.test.ts
+      - run: for f in .claude-plugin/*.json matt.json configs/*.json; do jq empty "$f" || exit 1; done

@@ -53,9 +53,9 @@ configs enforce what a check can (`tsconfig.house.json`, `biome.house.json`, the
   alike stays apart until a third copy appears. UI pieces are shared at their second use, so the look stays
   consistent.
 - **The entry file is the composition root:** it wires the features together and holds no logic.
-- **Small files.** Source files stay under 400 lines and folders under 15 files (tests, fixtures and generated
-  files aside); split by kind as they grow. The size check is a ratchet: files already over are listed at their
-  size, which may shrink and never grow.
+- **Small files.** Source files stay under 400 lines (tests, fixtures and generated files aside); split by kind as
+  they grow. The size check is a ratchet: files and folders already over are listed at their size, which may shrink
+  and never grow.
 - **One language per file.** Styles in stylesheets or classes, browser code in typed modules the build bundles,
   markup in components or templates, SQL in parameterised queries and migration files. Browser code imports the
   modules it shares with the server.
