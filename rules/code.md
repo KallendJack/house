@@ -15,6 +15,21 @@ configs enforce what a check can (`tsconfig.house.json`, `biome.house.json`, the
 
 ## Structure
 
+- **The default layout,** which a project adjusts in its own `AGENTS.md` (a `## Layout` section saying only what
+  differs) or, for a bigger change, an ADR:
+
+  ```text
+  src/
+  ├── features/<feature>/   one folder per feature: its pages or routes, logic, its own components, README.md
+  ├── components/<kind>/    UI shared by two or more features, grouped by kind: buttons/, forms/, layout/, feedback/
+  ├── lib/<topic>/          shared helpers, grouped by topic once there's more than a few
+  └── main.ts               the entry: wires the features together
+  e2e/                      browser tests; unit tests sit beside the file they test (x.test.ts)
+  ```
+
+- **No flat piles.** A folder holds one kind of thing. Past 15 source files it splits into subfolders by kind or
+  topic, never into "misc" or "utils2"; the size check fails a folder that doesn't.
+- **Names:** files in kebab-case, named after what they export; one component per file.
 - **Vertical slices.** Each feature is one folder: its routes or pages, its logic, its browser code, and a short
   `README.md` (what it does, one example, what it uses and what uses it, its routes or screens). A feature has one
   name everywhere: folder, routes, tests, glossary. Folders a framework fixes (`pages/`, `routes/`) stay thin and
