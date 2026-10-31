@@ -11,6 +11,9 @@ This skill writes them into a repo, or offers the changes when the repo's copy d
 
 ## Steps
 
+In the house repo itself (its `.claude-plugin/plugin.json` names `house`), there's nothing to set up: it's the
+source. Say so and stop.
+
 1. **Find the house copy.** Read the files from this skill's plugin (its `rules/`, `configs/`, `matt.json` and
    `.claude-plugin/plugin.json`, two folders up from this file). If you can't, read them from
    `https://github.com/KallendJack/house`.
