@@ -1,0 +1,25 @@
+# Weekly: when Matt Pocock's skills move past the version house was last reviewed against, open an issue to review.
+name: Matt watch
+on:
+  schedule:
+    - cron: "0 7 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          latest=$(curl -fsSL https://raw.githubusercontent.com/mattpocock/skills/main/.claude-plugin/plugin.json | jq -r .version)
+          reviewed=$(jq -r .reviewed matt.json)
+          echo "Matt's skills: $latest, house reviewed against: $reviewed"
+          [ "$latest" = "$reviewed" ] && exit 0
+          title="Matt's skills moved to $latest (reviewed against $reviewed)"
+          if gh issue list --state open --search "in:title \"Matt's skills moved to $latest\"" --json number --jq 'length' | grep -qx 0; then
+            gh issue create --title "$title" --body "Review https://github.com/mattpocock/skills/blob/main/CHANGELOG.md from $reviewed to $latest, as AGENTS.md's \"When Matt's skills move\" says."
+          fi

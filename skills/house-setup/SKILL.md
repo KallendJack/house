@@ -11,13 +11,15 @@ This skill writes them into a repo, or offers the changes when the repo's copy d
 
 ## Steps
 
-1. **Matt's setup first.** If the repo has no `docs/agents/issue-tracker.md`, run `setup-matt-pocock-skills` and
-   let it finish.
-2. **Find the house copy.** Read the files from this skill's plugin (its `rules/` and `configs/`, two folders up
-   from this file). If you can't, read them from `https://github.com/KallendJack/house`.
+1. **Find the house copy.** Read the files from this skill's plugin (its `rules/`, `configs/`, `matt.json` and
+   `.claude-plugin/plugin.json`, two folders up from this file). If you can't, read them from
+   `https://github.com/KallendJack/house`.
+2. **Matt's setup.** Run `setup-matt-pocock-skills` if the repo has no `docs/agents/issue-tracker.md`, or if Matt's
+   `CHANGELOG.md` says to re-run it in any version after the one the repo's House rules line names. Let it finish.
 3. **The base.** In the repo's `AGENTS.md`, replace the `## House rules` section (up to the next `##` heading) with
-   `rules/base.md`, or add it after the title. Keep everything else in `AGENTS.md`: the repo's own rules follow the
-   section and win where they say more.
+   `rules/base.md`, or add it after the title, filling `{{house}}` with house's `version` and `{{matt}}` with
+   `matt.json`'s `reviewed`. Keep everything else in `AGENTS.md`: the repo's own rules follow the section and win
+   where they say more.
 4. **The extras that apply.** Copy `rules/code.md` to `docs/agents/code.md` if the repo has app code, and
    `rules/screens.md` to `docs/agents/screens.md` if anything in it is seen by a person. A config-only repo takes the
    base alone; drop the base's pointer lines for extras it doesn't take.

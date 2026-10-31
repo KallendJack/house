@@ -1,9 +1,11 @@
 ## House rules
 
-From the house repo (`KallendJack/house`, `rules/base.md`); change them there, not here.
+From the house repo (`KallendJack/house`, `rules/base.md`); change them there, not here. House version:
+{{house}}, reviewed against Matt's skills {{matt}}.
 
 - **Skills:** Matt Pocock's skills run the work (`grill-with-docs`, `to-spec`, `to-tickets`, `implement`,
-  `code-review`, `pr`). Where his skills have a rule, it wins; the house rules only fill the gaps.
+  `code-review`, `pr`); when unsure which fits, `ask-matt` says. Where his skills have a rule, it wins; the house
+  rules only fill the gaps.
 - **Work** starts from an item where `docs/agents/issue-tracker.md` says work lives. Before building one, check its
   comments and open PRs for a claim, then comment "Building this". One thing at a time in an area: the next starts
   once the owner has tried the last.
