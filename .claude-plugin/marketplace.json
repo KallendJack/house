@@ -1,0 +1,14 @@
+{
+  "name": "kallendjack",
+  "owner": { "name": "KallendJack", "url": "https://github.com/KallendJack" },
+  "description": "The house standard: rules and skills for every repo, on top of Matt Pocock's skills.",
+  "plugins": [
+    {
+      "name": "house",
+      "source": "./",
+      "description": "House rules, configs and skills (house-setup, lead) for any repo.",
+      "category": "engineering",
+      "keywords": ["rules", "skills", "workflow"]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+---
+name: house-setup
+description: Set a repo up with the house standard, or bring its copy up to date. Use when starting a new repo, when a repo's house rules or configs may be older than the house repo's, or when the user says "set up house" or "house check".
+---
+
+# House setup
+
+The house repo holds the standard every repo follows: `rules/base.md` (the `## House rules` section of each repo's
+`AGENTS.md`), `rules/code.md` and `rules/screens.md` (the extras), and `configs/` (TypeScript, Biome, the size check).
+This skill writes them into a repo, or offers the changes when the repo's copy differs.
+
+## Steps
+
+1. **Matt's setup first.** If the repo has no `docs/agents/issue-tracker.md`, run `setup-matt-pocock-skills` and
+   let it finish.
+2. **Find the house copy.** Read the files from this skill's plugin (its `rules/` and `configs/`, two folders up
+   from this file). If you can't, read them from `https://github.com/KallendJack/house`.
+3. **The base.** In the repo's `AGENTS.md`, replace the `## House rules` section (up to the next `##` heading) with
+   `rules/base.md`, or add it after the title. Keep everything else in `AGENTS.md`: the repo's own rules follow the
+   section and win where they say more.
+4. **The extras that apply.** Copy `rules/code.md` to `docs/agents/code.md` if the repo has app code, and
+   `rules/screens.md` to `docs/agents/screens.md` if anything in it is seen by a person. A config-only repo takes the
+   base alone; drop the base's pointer lines for extras it doesn't take.
+5. **The configs, for a TypeScript repo:** copy `configs/tsconfig.house.json` and `configs/biome.house.json` to the
+   root and extend them from the repo's own `tsconfig.json` and `biome.json`; copy `configs/check-size.ts` to
+   `scripts/` and add `node scripts/check-size.ts` to the repo's check script. A repo with files already over runs it
+   once with `--baseline`.
+6. **Show the diff** to the user in a sentence or two (what changed, why) and open a pull request with the `pr`
+   skill. Never push to the default branch.
+
+## Rules
+
+- Change nothing the house doesn't own. A repo's own rules are the owner's.
+- A house rule that's wrong for one repo is fixed in the repo's own section, not by editing the copied block.
+- A rule worth having everywhere goes in the house repo first, in its own pull request, then out to the repos.
