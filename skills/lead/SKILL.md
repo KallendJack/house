@@ -19,9 +19,10 @@ evals and the merge. Work in **rounds**: one item per round, from pick to merged
    worktree, until the quick checks pass locally.
 5. **Open the PR** with the `pr` skill, with screenshots beside each board it builds and every difference listed
    when the owner will see the change (`docs/agents/screens.md`).
-6. **Review** in a fresh session: `code-review` against the issue, the screenshots against the board, and the evals
-   when the House rules' Prompts line applies. The builder fixes each finding or answers it with a reason. After 3
-   rounds of review that don't pass, hand it to the owner with the findings and both sides.
+6. **Review** in a fresh session (a subagent, or a new session where subagents fail): `code-review` against the
+   issue, the screenshots against the board, and the evals when the House rules' Prompts line applies. The builder
+   fixes each finding or answers it with a reason. After 3 rounds of review that don't pass, hand it to the owner
+   with the findings and both sides.
 7. **Merge** with a merge commit once every check is green, the review passed and each board difference has the
    owner's OK; then move the boards as `docs/agents/screens.md` says. The round is done when the item is merged or
    handed to the owner.
