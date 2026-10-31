@@ -20,7 +20,7 @@ configs enforce what a check can (`tsconfig.house.json`, `biome.house.json`, the
 
   ```text
   src/
-  ├── features/<feature>/   one folder per feature: its pages or routes, logic, its own components, README.md
+  ├── features/<feature>/   one folder per feature: its pages or routes, logic, its own components; index.ts is its door
   ├── components/<kind>/    UI shared by two or more features, grouped by kind: buttons/, forms/, layout/, feedback/
   ├── lib/<topic>/          shared helpers, grouped by topic once there's more than a few
   └── main.ts               the entry: wires the features together
@@ -30,10 +30,13 @@ configs enforce what a check can (`tsconfig.house.json`, `biome.house.json`, the
 - **No flat piles.** A folder holds one kind of thing. Past 15 source files it splits into subfolders by kind or
   topic, never into "misc" or "utils2"; the size check fails a folder that doesn't.
 - **Names:** files in kebab-case, named after what they export; one component per file.
-- **Vertical slices.** Each feature is one folder: its routes or pages, its logic, its browser code, and a short
-  `README.md` (what it does, one example, what it uses and what uses it, its routes or screens). A feature has one
-  name everywhere: folder, routes, tests, glossary. Folders a framework fixes (`pages/`, `routes/`) stay thin and
-  call into the feature's folder.
+- **Vertical slices.** Each feature is one folder: its routes or pages, its logic, its browser code. A feature has
+  one name everywhere: folder, routes, tests, glossary. Folders a framework fixes (`pages/`, `routes/`) stay thin
+  and call into the feature's folder; otherwise follow the framework's own conventions.
+- **One door per feature.** A feature's `index.ts` exports what others may use, kept small; other features import
+  from it, never from its insides. A deep feature with a small door is easier to change and to hand to an agent.
+- **A feature README only when it earns it:** when what the folder does or how it's used isn't plain from its door.
+  The repo's `README.md` lists the features in a line each.
 - **Shared code** sits in one place for UI pieces and one for helpers (`components/`, `lib/`); look there before
   writing one. Share knowledge, not look-alikes: code that must change together becomes one; code that merely looks
   alike stays apart until a third copy appears. UI pieces are shared at their second use, so the look stays
