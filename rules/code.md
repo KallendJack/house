@@ -46,8 +46,8 @@ configs enforce what a check can (`tsconfig.house.json`, `biome.house.json`, the
   and call into the feature's folder; otherwise follow the framework's own conventions.
 - **Each feature is a deep module:** its `index.ts` is its interface, small, and other features import only from it.
   A deep module is easier to change and to hand to an agent (`codebase-design` has the vocabulary).
-- **A feature README only when it earns it:** when what the folder does or how it's used isn't plain from its interface.
-  The repo's `README.md` lists the features in a line each.
+- **A feature README only when it earns it:** when what the folder does or how it's used isn't plain from its
+  interface. The repo's `README.md` lists the features in a line each.
 - **Shared code** sits in one place for UI pieces and one for helpers (`components/`, `lib/`); look there before
   writing one. Share knowledge, not look-alikes: code that must change together becomes one; code that merely looks
   alike stays apart until a third copy appears. UI pieces are shared at their second use, so the look stays
@@ -71,8 +71,8 @@ configs enforce what a check can (`tsconfig.house.json`, `biome.house.json`, the
   schema.
 - **Make wrong states unrepresentable.** Each variant is its own case the compiler checks; expected failures are
   values the caller has to handle, and exceptions are for bugs.
-- **In TypeScript:** `as const` and `satisfies` are the only casts; Zod at the edges; discriminated unions, no enums; `type` over `interface`; `Result` at module
-  boundaries; an options object past two parameters.
+- **In TypeScript:** `as const` and `satisfies` are the only casts; Zod at the edges; discriminated unions, no enums;
+  `type` over `interface`; `Result` at module boundaries; an options object past two parameters.
 
 ## Errors and security
 

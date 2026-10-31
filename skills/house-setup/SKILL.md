@@ -48,5 +48,6 @@ source. Say so and stop.
 ## Rules
 
 - Change only what the house owns. A repo's own rules are the owner's.
-- A house rule that's wrong for one repo is overridden in the repo's own section; the copied block stays as house wrote it.
+- A house rule that's wrong for one repo is overridden in the repo's own section; the copied block stays as house
+  wrote it.
 - A rule worth having everywhere goes in the house repo first, in its own pull request, then out to the repos.
