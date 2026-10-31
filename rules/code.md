@@ -13,6 +13,17 @@ configs enforce what a check can (`tsconfig.house.json`, `biome.house.json`, the
 - **The house has configs for** TypeScript with pnpm, Biome, Vitest, Playwright and Zod. A project that picks them
   gets those configs; one that picks otherwise sets up the same checks with its own tools.
 
+## Commands and CI
+
+- **The same commands in every repo,** so anyone (or any agent) moving between repos knows them: `dev` (run it
+  locally), `check` (lint, typecheck, size check, unit tests: the quick checks), `e2e` (browser tests), `build`.
+  A repo without one of them leaves it out rather than renaming it.
+- **Pinned versions:** the runtime and the package manager (`packageManager` and `engines` in `package.json`), and
+  a lockfile, so a fresh clone runs the same as yours.
+- **CI on every pull request** runs `check`, then `e2e` and `build`; the default branch is protected and takes
+  only green pull requests.
+- **Dependency updates** come grouped, weekly, through the same CI, and merge only when green.
+
 ## Structure
 
 - **The default layout,** which a project adjusts in its own `AGENTS.md` (a `## Layout` section saying only what

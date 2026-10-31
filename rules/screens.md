@@ -36,6 +36,9 @@ Read before building or changing anything a person sees.
 - Content that loads after the page fills skeleton rows, and a revisit shows the last answer at once. A button
   shows when it's busy.
 - Forms keep what was typed on an error and show the error beside its field.
+- **Errors and warnings say what to do,** in plain words: what happened and the next step ("Couldn't save, you're
+  offline. It'll retry when you're back."), never a code or a bare "Something went wrong".
+- **Empty screens point the way:** what goes here and the one action that fills it.
 
 ## Access
 

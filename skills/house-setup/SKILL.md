@@ -25,7 +25,19 @@ This skill writes them into a repo, or offers the changes when the repo's copy d
    root and extend them from the repo's own `tsconfig.json` and `biome.json`; copy `configs/check-size.ts` to
    `scripts/` and add `node scripts/check-size.ts` to the repo's check script. A repo with files already over runs it
    once with `--baseline`.
-6. **Show the diff** to the user in a sentence or two (what changed, why) and open a pull request with the `pr`
+6. **The repo basics,** for every repo:
+   - `configs/.gitattributes` to the root (LF line endings everywhere, so Windows and CI agree);
+   - `CLAUDE.md` holding only "Read AGENTS.md.";
+   - `.env.example` if the repo reads any environment variable;
+   - for a TypeScript repo: the standard commands (`dev`, `check`, `e2e`, `build`) in `package.json`,
+     `packageManager` and `engines` pinned, and `configs/github/ci.yml` and `configs/github/dependabot.yml` copied
+     to `.github/workflows/ci.yml` and `.github/dependabot.yml`, adjusted to the commands the repo has;
+   - a `LICENSE` if the repo is public (ask the user which).
+7. **Settings on GitHub,** after the pull request merges (ask before changing any): protect the default branch so
+   it takes only green pull requests, and turn on secret scanning with push protection
+   (`gh api -X PATCH repos/<owner>/<repo> -f security_and_analysis[secret_scanning][status]=enabled` and the same for
+   `secret_scanning_push_protection`).
+8. **Show the diff** to the user in a sentence or two (what changed, why) and open a pull request with the `pr`
    skill. Never push to the default branch.
 
 ## Rules

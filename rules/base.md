@@ -16,8 +16,9 @@ From the house repo (`KallendJack/house`, `rules/base.md`); change them there, n
   try it.
 - **Prompts:** a change to what a model is told runs the project's evals 3 times on Claude and 3 on Codex; each
   case passes at least 2 of 3 on each before it merges.
-- **Docs** move with the change, in the same pull request. `README.md` says what the repo is, how to run, check and
-  deploy it, and what's in it.
+- **Docs** move with the change, in the same pull request, each kind in one place: `README.md` (what the repo is,
+  how to run, check and deploy it, its features in a line each), `AGENTS.md` (how agents work here; `CLAUDE.md`
+  only points to it), `GLOSSARY.md`, `docs/adr/` (decisions), `docs/agents/` (agent extras), `.env.example`.
 - **Secrets** come from the environment, each listed in `.env.example`. Examples and fixtures are made up; the
   owner's and real people's data stays out of the repo.
 - **Dependencies** stay few and locked, the platform's own pieces first. Vendored files say where they came from.

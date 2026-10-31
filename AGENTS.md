@@ -7,7 +7,8 @@ each project's own `AGENTS.md`.
 
 - `rules/base.md`: the `## House rules` section every repo's `AGENTS.md` carries.
 - `rules/code.md`, `rules/screens.md`: the extras, copied to a repo's `docs/agents/` when it has app code or screens.
-- `configs/`: `tsconfig.house.json`, `biome.house.json` and the size check (`check-size.ts`, with its test).
+- `configs/`: `tsconfig.house.json`, `biome.house.json`, the size check (`check-size.ts`, with its test),
+  `.gitattributes`, and `github/` (CI and Dependabot templates).
 - `skills/`: `house-setup` (write the standard into a repo or update it) and `lead` (keep a repo's work moving).
 - `.claude-plugin/`: the marketplace and plugin manifests that Claude Code and Codex install from.
 
