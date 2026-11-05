@@ -1,6 +1,6 @@
 ---
 name: house-setup
-description: House standard for a repo: write it into a new repo, or bring an existing repo's copy up to date. Use when the user says "set up house" or "house check", or when starting a new repo.
+description: "House standard for a repo: write it into a new repo, or bring an existing repo\u0027s copy up to date. Use when the user says \"set up house\" or \"house check\", or when starting a new repo."
 ---
 
 # House setup
