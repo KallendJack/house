@@ -9,7 +9,7 @@ each project's own `AGENTS.md`.
 - `rules/code.md`, `rules/screens.md`: the extras, copied to a repo's `docs/agents/` when it has app code or screens.
 - `configs/`: `tsconfig.house.json`, `biome.house.json`, the size check (`check-size.ts`, with its test),
   `.gitattributes`, and `github/` (CI and Dependabot templates).
-- `skills/`: `house-setup` (write the standard into a repo or update it) and `lead` (keep a repo's work moving).
+- `skills/`: `house-setup` (write the standard into a repo or update it).
 - `.claude-plugin/`: the marketplace and plugin manifests that Claude Code and Codex install from.
 - `matt.json` and `.github/workflows/matt-watch.yml`: which version of Matt's skills house was last reviewed
   against, and the weekly check for a newer one.
@@ -32,7 +32,7 @@ each project's own `AGENTS.md`.
 opens an issue when his skills have moved past it. To close it, read his `CHANGELOG.md` from that version to the
 latest, and:
 
-1. **Renamed or retired skills:** fix every place house names one (`rules/base.md`, `skills/lead`).
+1. **Renamed or retired skills:** fix every place house names one (`rules/`, `skills/house-setup`, `README.md`).
 2. **A rule of his that now covers one of ours:** drop ours.
 3. **"Re-run `/setup-matt-pocock-skills`":** note it on the issue; `house-setup` re-runs it in each repo on its next
    house check.

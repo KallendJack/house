@@ -6,7 +6,7 @@
     {
       "name": "house",
       "source": "./",
-      "description": "House rules, configs and skills (house-setup, lead) for any repo.",
+      "description": "House conventions, configs and setup for any repo.",
       "category": "engineering",
       "keywords": ["rules", "skills", "workflow"]
     }
