@@ -33,8 +33,13 @@ Then, in a repo, ask the agent to "set up house".
 
 ## Working with House
 
-Choose the work, then use Matt's skills directly. Start with `ask-matt` when unsure which fits.
+Choose the work, then follow Matt's main flow. Start with `ask-matt` when unsure which fits.
 House does not choose tasks or add an orchestration workflow.
+
+Plan a multi-session build with `/to-spec`, then `/to-tickets`. Build each ticket in a new thread with
+`/implement <issue>`: Matt marks it user-invoked, so an agent can't start it on its own. Agents write PR bodies with
+the `pr` skill. After a build that went sideways, run `/retro` so the fix lands in the repo, not in an agent's
+memory.
 
 Planned work and bugs live in GitHub Issues. Milestones group deliverable outcomes; native blocking links
 express dependencies. Small incidental fixes can go straight into a PR. Each project keeps its own code layout,
