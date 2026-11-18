@@ -49,6 +49,13 @@ The weekly Matt watch opens an issue when his version changes. Review the upstre
 rules now covered upstream, bump House's version, and roll the reviewed release into consuming repos through
 separate PRs. Updating an installed plugin does not update a repo's copied conventions.
 
+## Documentation
+
+The root README introduces the project and links to a short README in any folder whose purpose isn't obvious.
+Each project picks its own headings and keeps them the same across folders of one kind. Review checks that the
+words still match the change; the [documentation workflow](configs/github/docs.yml) checks local Markdown links
+and anchors offline, so private services and external sites are never contacted.
+
 ## Check
 
 ```sh

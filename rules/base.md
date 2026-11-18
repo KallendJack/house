@@ -12,7 +12,9 @@ Change shared rules in House; keep project-specific rules below this section.
 - **Checks:** run the repo's checks before pushing. Fix failing CI before calling a PR ready; merge requires
   green checks and review against the requested change.
 - **Docs:** `README.md` explains the project; `AGENTS.md` holds agent instructions; `CLAUDE.md` points to it.
-  Matt's setup owns the tracker and domain-document pointers in `docs/agents/`. Update docs with the change.
+  A folder whose purpose isn't obvious gets a short README, linked from its parent; link to detail, don't repeat it.
+  Matt's setup owns the tracker and domain-document pointers in `docs/agents/`. Update docs, folder READMEs and
+  their links with the change; CI checks local Markdown links and anchors.
 - **Secrets:** values come from the environment, names from `.env.example`. Public examples and fixtures use
   made-up data.
 - **Communication:** plain words, concise explanations, and evidence appropriate to the change.

@@ -28,6 +28,7 @@ architecture, commands and operational rules.
    configs. Copy `configs/check-size.ts` to `scripts/` and add it to the existing aggregate check command.
    Record existing excess with `--baseline`; don't restructure application code during setup. Preserve existing
    CI and dependency-update configuration; use `configs/github/` as templates where those are missing.
+   Use `configs/github/docs.yml` for local Markdown file and anchor checks when no equivalent exists.
    Copy `.gitattributes`; keep environment variable names documented in `.env.example` where applicable.
 6. **Verify and propose.** Run the repo's checks and review the diff for lost project rules or stale pointers.
    Bump House's version for source changes. Open a PR using Matt's `pr` skill; report check results and any
